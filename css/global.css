@@ -1,0 +1,105 @@
+/* ============================================
+   GLOBAL STYLES — J&T Cargo Wonokromo
+   ============================================ */
+
+/* ── Global Font: Helvetica ── */
+*, *::before, *::after {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+:root {
+  --green:       #1a7c3e;
+  --green-dark:  #145f30;
+  --green-light: #e8f5ec;
+  --accent:      #f5a623;
+  --gray-soft:   #f7f8fa;
+  --text-main:   #1a2633;
+  --text-muted:  #6b7280;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--green); border-radius: 3px; }
+
+/* Section spacing */
+section { padding: 72px 0; }
+
+/* Section heading pattern */
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: var(--green-light);
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.section-title span { color: var(--green); }
+
+/* Card base */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 20px rgba(0,0,0,.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(26,124,62,.12);
+}
+
+/* WhatsApp button */
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 999px;
+  transition: background .2s, transform .2s;
+  text-decoration: none;
+}
+.btn-wa:hover { background: var(--green-dark); transform: translateY(-2px); }
+
+/* Scroll-reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger > * { transition-delay: calc(var(--i, 0) * 80ms); }
+
+section#home,
+#home-mount section,
+#home-mount #home {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#home .home-left {
+  background: transparent !important;
+}
