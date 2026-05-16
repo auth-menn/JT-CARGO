@@ -1,3 +1,144 @@
+const kontakResponsive = document.createElement('style');
+
+kontakResponsive.textContent = `
+
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 1023px){
+
+  #kontak{
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:28px !important;
+
+    padding:40px 24px !important;
+  }
+
+  /* INFO */
+  #kontak > div:first-child{
+    width:100% !important;
+    flex:none !important;
+    gap:22px !important;
+  }
+
+  /* MAP */
+  #kontak > div:last-child{
+    width:100% !important;
+    flex:none !important;
+
+    min-height:320px !important;
+
+    border-radius:18px !important;
+  }
+
+  /* MAP INFO BOX */
+  #kontak > div:last-child > div{
+    width:calc(100% - 20px) !important;
+    max-width:380px !important;
+
+    left:10px !important;
+    right:10px !important;
+
+    box-sizing:border-box !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 767px){
+
+  #kontak{
+    padding:32px 18px !important;
+    gap:24px !important;
+  }
+
+  /* INFO WRAPPER */
+  #kontak > div:first-child{
+    gap:18px !important;
+  }
+
+  /* EACH ITEM */
+  #kontak > div:first-child > div{
+    background:#fff !important;
+
+    border-radius:16px !important;
+
+    padding:14px 16px !important;
+
+    box-shadow:
+      0 4px 18px rgba(0,0,0,.06) !important;
+
+    align-items:flex-start !important;
+  }
+
+  /* ICON */
+  #kontak svg{
+    width:22px !important;
+    height:22px !important;
+  }
+
+  /* TEXT */
+  #kontak p{
+    font-size:13px !important;
+    line-height:1.7 !important;
+  }
+
+  /* MAP */
+  #kontak > div:last-child{
+    min-height:260px !important;
+
+    border-radius:18px !important;
+
+    overflow:hidden !important;
+
+    box-shadow:
+      0 8px 28px rgba(0,0,0,.12) !important;
+  }
+
+  /* GOOGLE INFO BOX */
+  #kontak > div:last-child > div{
+    width:calc(100% - 16px) !important;
+
+    left:8px !important;
+    top:8px !important;
+
+    padding:12px 14px !important;
+
+    border-radius:14px !important;
+  }
+
+  #kontak > div:last-child > div p:first-child{
+    font-size:13px !important;
+  }
+
+  #kontak > div:last-child > div p:nth-child(2){
+    font-size:11px !important;
+    line-height:1.5 !important;
+  }
+
+  /* RATING */
+  #kontak span{
+    font-size:11px !important;
+  }
+
+  /* LINK */
+  #kontak a{
+    font-size:11px !important;
+  }
+
+  /* IFRAME */
+  #kontak iframe{
+    min-height:260px !important;
+  }
+}
+
+`;
+
+document.head.appendChild(kontakResponsive);
+
 document.getElementById('kontak-mount').innerHTML = `
 <section id="kontak" class="bg-white" style="padding: 48px 40px; display:flex; align-items:center; justify-content:center; gap:40px; width:100%; box-sizing:border-box; font-family:'Segoe UI',sans-serif; overflow:hidden;">
 
@@ -44,24 +185,27 @@ document.getElementById('kontak-mount').innerHTML = `
 
   <div style="flex:0 0 60%; width:60%; min-width:0; border-radius:6px 0 0 12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.12); align-self:stretch; min-height:280px; position:relative;">
 
-   <!-- Info Box pojok kiri atas -->
-    <div style="position:absolute; top:10px; left:10px; z-index:10; background:white; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2); padding:12px 16px; width:380px; font-family:'Segoe UI',sans-serif;">
-      <p style="margin:0 0 6px 0; font-size:14px; font-weight:700; color:#000;">JNT Cargo Wonokromo (SUB006A)</p>
-      <p style="margin:0 0 8px 0; font-size:12px; color:#555; line-height:1.5;">Jl. Ngagel No.213B, Ngagel, Kec. Wonokromo, Surabaya, Jawa Timur 60246</p>
-      <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
-        <span style="font-size:12px; color:#555;">4.4</span>
-        <span style="font-size:14px; color:#FBBC04; letter-spacing:1px;">★★★★★</span>
-        <a href="https://www.google.com/maps/place/Jl.+Ngagel+No.213" target="_blank" style="font-size:12px; color:#1a73e8; text-decoration:none;">232 ulasan</a>
-      </div>
-      <a href="https://www.google.com/maps/place/Jl.+Ngagel+No.213" target="_blank" style="font-size:12px; color:#1a73e8; text-decoration:none;">Lihat lebih besar</a>
-    </div>
+ <!-- Info Box pojok kiri atas -->
+<div style="position:absolute; top:10px; left:10px; z-index:10; background:white; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2); padding:12px 16px; width:380px; font-family:'Segoe UI',sans-serif;">
+  <p style="margin:0 0 6px 0; font-size:14px; font-weight:700; color:#000;">JNT Cargo Wonokromo (SUB006A)</p>
+  <p style="margin:0 0 8px 0; font-size:12px; color:#555; line-height:1.5;">Jl. Ngagel No.213B, Ngagel, Kec. Wonokromo, Surabaya, Jawa Timur 60246</p>
+  <div style="display:flex; align-items:center; gap:6px; margin-bottom:8px;">
+    <span style="font-size:12px; color:#555;">4.4</span>
+    <span style="font-size:14px; color:#FBBC04; letter-spacing:1px;">★★★★★</span>
+    <a href="https://www.google.com/maps/place/JNT+CARGO+SURABAYA+WONOKROMO+(SUB006A)/@-7.2991291,112.7408925,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd7fbaad6585f03:0xf1cf3015c32d4d2e!8m2!3d-7.2991291!4d112.7408925!16s%2Fg%2F11r_w3vglw"
+       target="_blank" style="font-size:12px; color:#1a73e8; text-decoration:none;">232 ulasan</a>
+  </div>
+  <a href="https://www.google.com/maps/place/JNT+CARGO+SURABAYA+WONOKROMO+(SUB006A)/@-7.2991291,112.7408925,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd7fbaad6585f03:0xf1cf3015c32d4d2e!8m2!3d-7.2991291!4d112.7408925!16s%2Fg%2F11r_w3vglw"
+     target="_blank" style="font-size:12px; color:#1a73e8; text-decoration:none;">Lihat lebih besar</a>
+</div>
 
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.547!2d112.7384041!3d-7.29915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fba2f1eebf17%3A0x919532ff6fe2bb26!2sJl.%20Ngagel%20No.213%2C%20Ngagel%2C%20Kec.%20Wonokromo%2C%20Surabaya!5e0!3m2!1sid!2sid!4v1"
-      width="100%" height="100%"
-      style="border:0; display:block; min-height:280px;"
-      allowfullscreen="" loading="lazy">
-    </iframe>
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990!2d112.7383925!3d-7.2991291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbaad6585f03%3A0xf1cf3015c32d4d2e!2sJNT%20CARGO%20SURABAYA%20WONOKROMO%20(SUB006A)!5e0!3m2!1sid!2sid!4v1"
+  width="100%" height="100%"
+  style="border:0; display:block; min-height:280px;"
+  allowfullscreen="" loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
 
   </div>
 
