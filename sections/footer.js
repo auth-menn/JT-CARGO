@@ -356,49 +356,164 @@ document.getElementById('footer-mount').innerHTML = `
 </footer>
 
 <style>
+
+/* =========================================================
+   TABLET
+========================================================= */
 @media (max-width: 992px){
 
+  /* CONTAINER */
   #footer-mount footer > div:first-child{
-    padding:28px 24px 0 !important;
+    padding:32px 28px 0 !important;
   }
 
+  /* NAVBAR TOP */
+  #footer-mount footer > div:first-child > div:first-child{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:28px !important;
+  }
+
+  /* MENU */
   #footer-mount footer nav{
-    gap:20px !important;
+    width:100% !important;
+    margin-left:0 !important;
+    padding-left:0 !important;
+    gap:18px 28px !important;
+    justify-content:flex-start !important;
   }
 
-  #footer-mount footer div[style*="grid-template-columns:1.1fr 1fr 1fr"]{
+  /* MAIN GRID */
+  #footer-mount footer div[style*="grid-template-columns:1.2fr 1fr 1fr"]{
     grid-template-columns:1fr !important;
-    gap:50px !important;
+    gap:42px !important;
+    padding:42px 0 44px !important;
   }
 
-  #footer-mount footer div[style*="grid-template-columns:1.15fr 0.9fr 0.9fr"]{
-  grid-template-columns:1fr !important;
-  gap:50px !important;
+  /* REMOVE LEFT PADDING */
+  #footer-mount footer div[style*="padding-left:25px"]{
+    padding-left:0 !important;
+  }
+
+  #footer-mount footer div[style*="padding-left:70px"]{
+    padding-left:0 !important;
+  }
+
+  /* DESCRIPTION */
+  #footer-mount footer p{
+    max-width:100% !important;
+  }
+
+  /* TAG GRID */
+  #footer-mount footer div[style*="grid-template-columns:1fr 1fr"]{
+    max-width:420px !important;
+  }
+
+  /* BOTTOM */
+  #footer-mount footer > div:last-child > div{
+    padding:18px 28px !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:18px !important;
+  }
+
 }
 
-#footer-mount footer div[style*="padding-left:35px"]{
-  padding-left:0 !important;
-}
 
-#footer-mount footer div[style*="padding-left:10px"]{
-  padding-left:0 !important;
-
-}
-
+/* =========================================================
+   MOBILE
+========================================================= */
 @media (max-width: 576px){
 
+  /* CONTAINER */
+  #footer-mount footer > div:first-child{
+    padding:28px 18px 0 !important;
+  }
+
+  /* LOGO */
+  #footer-mount footer svg{
+    max-width:100% !important;
+  }
+
+  /* MENU */
   #footer-mount footer nav{
-    gap:16px !important;
-  }
-
-  #footer-mount footer h3{
-    font-size:26px !important;
-  }
-
-  #footer-mount footer div[style*="grid-template-columns:1fr 1fr"]{
+    display:grid !important;
     grid-template-columns:1fr 1fr !important;
+    gap:14px 20px !important;
+    width:100% !important;
+  }
+
+  #footer-mount footer nav a{
+    font-size:13px !important;
+  }
+
+  /* TITLE */
+  #footer-mount footer h3{
+    font-size:24px !important;
+    line-height:1.3 !important;
+  }
+
+  /* SECTION TITLE */
+  #footer-mount footer h4{
+    font-size:17px !important;
+    margin-bottom:12px !important;
+  }
+
+  /* PARAGRAPH */
+  #footer-mount footer p{
+    font-size:14px !important;
+    line-height:1.8 !important;
+  }
+
+  /* CONTACT BUTTON */
+  #footer-mount footer a[href*="wa.me"]{
+    width:100% !important;
+    max-width:260px !important;
+    height:48px !important;
+    font-size:14px !important;
+  }
+
+  /* TAG AREA */
+  #footer-mount footer div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important;
+    max-width:100% !important;
+    gap:12px !important;
+  }
+
+  /* EMPTY TAG FIX */
+  #footer-mount footer div[style*="grid-template-columns:1fr 1fr"] a{
+    height:42px !important;
+    font-size:13px !important;
+  }
+
+  /* BOTTOM */
+  #footer-mount footer > div:last-child > div{
+    padding:18px !important;
+    text-align:left !important;
+  }
+
+  /* COPYRIGHT */
+  #footer-mount footer > div:last-child p{
+    font-size:13px !important;
+  }
+
+  /* SOCIAL WRAPPER */
+  #footer-mount footer > div:last-child div[style*="display:flex"][style*="gap:14px"]{
+    flex-wrap:wrap !important;
+    gap:12px !important;
+  }
+
+  /* SOCIAL TEXT */
+  #footer-mount footer span{
+    font-size:13px !important;
+  }
+
+  /* SOCIAL ICON */
+  #footer-mount footer a[target="_blank"]{
+    flex-shrink:0 !important;
   }
 
 }
+
 </style>
 `;
