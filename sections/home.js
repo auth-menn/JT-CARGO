@@ -3,128 +3,129 @@
 
 document.getElementById('home-mount').innerHTML = `
 <style>
-  #home * {
-    box-sizing: border-box;
-  }
+#home * {
+  box-sizing: border-box;
+}
 
-  #home {
-    font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
-    background: #ffffff;
-    display: flex;
-    flex-direction: column;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden;
-    min-height: 480px;
-  }
+#home {
+  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  min-height: 480px;
+}
 
-  .home-hero {
+.home-hero {
   background: #ffffff;
   display: flex;
   align-items: stretch;
   flex: 1;
   position: relative;
   overflow: hidden;
-  min-height: 650px; /* ← tambahkan ini */
+  min-height: 650px;
 }
-  .home-left {
-    width: 44%;
-    flex-shrink: 0;
-    padding: 60px 44px 60px 6vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: transparent !important;
-    position: relative;
-    z-index: 6;
-  }
 
-  .home-left h1 {
-    font-size: clamp(1.6rem, 3.8vw, 3rem);
-    font-weight: 600;
-    line-height: 1.12;
-    color: #111111;
-    margin: 0 0 22px 0;
-  }
+.home-left {
+  width: 44%;
+  flex-shrink: 0;
+  padding: 60px 44px 60px 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent !important;
+  position: relative;
+  z-index: 6;
+}
 
-  .home-left h1 span {
-    color: #008037;
-  }
+.home-left h1 {
+  font-size: clamp(1.6rem, 3.8vw, 3rem);
+  font-weight: 600;
+  line-height: 1.12;
+  color: #111111;
+  margin: 0 0 22px 0;
+}
 
-  .home-left p.desc {
-    color: #3a3a3a;
-    font-size: clamp(0.92rem, 1.25vw, 1.1rem);
-    line-height: 1.78;
-    margin: 0 0 34px 0;
-    max-width: 500px;
-    font-weight: 400;
-  }
+.home-left h1 span {
+  color: #008037;
+}
 
-  .home-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
+.home-left p.desc {
+  color: #3a3a3a;
+  font-size: clamp(0.92rem, 1.25vw, 1.1rem);
+  line-height: 1.78;
+  margin: 0 0 34px 0;
+  max-width: 500px;
+  font-weight: 400;
+}
 
-  .btn-kirim {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #008037;
-    color: #ffffff;
-    font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
-    font-weight: 700;
-    font-size: 0.97rem;
-    padding: 15px 30px;
-    border-radius: 10px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .btn-kirim:hover { background: #006a2c; }
-  .btn-kirim svg { width: 20px; height: 20px; fill: #ffffff; flex-shrink: 0; }
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
 
-  .btn-ongkir {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 2px solid #008037;
-    color: #008037;
-    font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
-    font-weight: 700;
-    font-size: 0.97rem;
-    padding: 15px 30px;
-    border-radius: 10px;
-    text-decoration: none;
-    background: transparent;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .btn-ongkir:hover { background: #f0faf4; }
+.btn-kirim {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #008037;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 0.97rem;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-kirim:hover { background: #006a2c; }
+.btn-kirim svg { width: 20px; height: 20px; fill: #ffffff; flex-shrink: 0; }
 
-  .home-trust {
+.btn-ongkir {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #008037;
+  color: #008037;
+  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 0.97rem;
+  padding: 8px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-ongkir:hover { background: #f0faf4; }
+
+.home-trust {
   color: #555555;
   font-size: 0.93rem;
   font-weight: 500;
   letter-spacing: 0.01em;
   margin: 0;
-  display: flex;        /* ← tambah */
-  align-items: center;  /* ← tambah */
+  display: flex;
+  align-items: center;
 }
 
-  .home-right {
+.home-right {
   position: absolute;
   top: 0;
   right: 0;
-  width: 65%;   /* full width, bukan hanya sisi kanan */
+  width: 65%;
   height: 100%;
-  z-index: 1;    /* di bawah kurva */
+  z-index: 1;
   overflow: hidden;
 }
 
-  .home-right img {
+.home-right img {
   position: absolute;
   top: 0;
   left: 0;
@@ -134,104 +135,295 @@ document.getElementById('home-mount').innerHTML = `
   object-position: center top;
 }
 
-  /* SVG kurva mengisi penuh area hero, bukan hanya home-right */
-  .home-curve {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 4;
-    pointer-events: none;
-  }
-
- .home-statsbar {
-    background: rgba(0, 128, 55, 0.05);
-    width: 100%;
-    padding: 18px 0;
-    flex-shrink: 0;
+.home-curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  pointer-events: none;
 }
 
- .home-stats-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 20px;   /* geser seluruh grid sedikit ke kiri */
-    padding-right: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    align-items: center;
+.home-statsbar {
+  background: rgba(0, 128, 55, 0.05);
+  width: 100%;
+  padding: 18px 0;
+  flex-shrink: 0;
+}
+
+.home-stats-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  align-items: center;
 }
 
 .home-stat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;            /* jarak antara icon dan text diperbesar */
-    padding: 10px 40px;   /* ruang kiri-kanan tiap item diperbesar */
-    width: 100%;
-    border-right: 2px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 40px;
+  width: 100%;
+  border-right: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 .home-stat:first-child {
-    justify-content: flex-start; /* item pertama lebih menempel ke kiri */
-    padding-left: 0;
+  justify-content: flex-start;
+  padding-left: 0;
 }
 
 .home-stat:last-child {
-    border-right: none;
+  border-right: none;
 }
 
 .home-stat-text {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;             
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .home-stat-label {
-    text-align: left;
+  text-align: left;
 }
 
-  .home-stat-icon {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #008037;
-}
-
-.home-stat-text {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
+.home-stat-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #008037;
 }
 
 .home-stat-value {
-    color: #000000c6;
-    font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
-    font-size: 1.25rem;
-    font-weight: 800;
-    margin: 0;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-}
-    .home-stat-label {
-    color: #3a3a3a;
-    font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin: 0;
-    letter-spacing: 0.01em;
-    text-transform: none;
-    text-align: left;
+  color: #000000c6;
+  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
-@media (max-width: 768px) {
-    .home-stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .home-stat:nth-child(2) { border-right: 1.5px solid rgba(0,128,55,0.2); }
-    .home-stat:nth-child(even) { border-right: none; }
-    .home-stat { border-bottom: 1.5px solid rgba(0,128,55,0.2); padding: 12px 16px; }
-    .home-stat:nth-child(3), .home-stat:nth-child(4) { border-bottom: none; }
+.home-stat-label {
+  color: #3a3a3a;
+  font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-align: left;
+}
+
+/* ═══════════════════════════════
+   TABLET — max-width: 1024px
+═══════════════════════════════ */
+@media (max-width: 1024px) {
+  .home-hero {
+    min-height: 480px;
+  }
+
+  .home-left {
+    width: 52%;
+    padding: 40px 28px 40px 5vw;
+  }
+
+  .home-left h1 {
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    margin: 0 0 16px 0;
+  }
+
+  .home-left p.desc {
+    font-size: clamp(0.88rem, 1.1vw, 1rem);
+    margin: 0 0 24px 0;
+  }
+
+  .btn-kirim {
+    font-size: 0.9rem;
+    padding: 13px 24px;
+  }
+
+  .btn-ongkir {
+    font-size: 0.9rem;
+    padding: 11px 24px;
+  }
+
+  .home-right {
+    width: 60%;
+  }
+
+  .home-stats-grid {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .home-stat {
+    padding: 10px 20px;
+    gap: 14px;
+  }
+
+  .home-stat:first-child {
+    padding-left: 8px;
+  }
+}
+
+/* ═══════════════════════════════
+   MOBILE — max-width: 640px
+═══════════════════════════════ */
+@media (max-width: 640px) {
+
+  /* Hero: balik jadi kolom, gambar di atas */
+  .home-hero {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  /* Sembunyikan kurva SVG desktop */
+  .home-curve {
+    display: none;
+  }
+
+  /* Gambar: lepas dari absolute, jadi full-width di atas */
+  .home-right {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    top: unset;
+    right: unset;
+  }
+    .home-right img {
+    object-position: center bottom; /* ← ganti sesuai posisi subjek di foto */
+  }
+
+  /* Wave putih di bawah foto */
+  .home-right::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 52px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 375 52' preserveAspectRatio='none'%3E%3Cpath d='M0 28C70 6 140 48 210 28 280 8 330 42 375 22V52H0Z' fill='white'/%3E%3C/svg%3E") no-repeat bottom / cover;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Teks: full width di bawah foto */
+  .home-left {
+    width: 100%;
+    padding: 24px 20px 22px;
+  }
+
+  .home-left h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0 0 14px 0;
+  }
+
+  .home-left p.desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+    max-width: 100%;
+  }
+
+  /* Tombol: susun vertikal, full width */
+  .home-buttons {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .btn-kirim,
+  .btn-ongkir {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.97rem;
+    padding: 14px 20px;
+  }
+
+  .home-trust {
+    font-size: 0.83rem;
+    flex-wrap: wrap;
+    gap: 4px;
+    line-height: 1.6;
+  }
+
+  /* Stats bar: grid 2×2 */
+  .home-statsbar {
+    padding: 14px 0;
+  }
+
+  .home-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
+
+  .home-stat {
+    justify-content: flex-start;
+    padding: 12px 14px;
+    gap: 12px;
+    border-right: 1.5px solid rgba(0, 128, 55, 0.18);
+    border-bottom: 1.5px solid rgba(0, 128, 55, 0.18);
+  }
+
+  .home-stat:first-child {
+    padding-left: 14px;
+  }
+
+  /* Kolom kanan: hapus border kanan */
+  .home-stat:nth-child(2),
+  .home-stat:nth-child(4) {
+    border-right: none;
+  }
+
+  /* Baris bawah: hapus border bawah */
+  .home-stat:nth-child(3),
+  .home-stat:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .home-stat-value {
+    font-size: 1.05rem;
+  }
+
+  .home-stat-label {
+    font-size: 0.75rem;
+  }
+
+  .home-stat-icon svg {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+/* Desktop: paksa teks tetap di kiri walau urutan DOM berubah */
+@media (min-width: 641px) {
+  .home-hero {
+    flex-direction: row;
+  }
+
+  .home-right {
+    order: 2; /* gambar tetap visual di kanan */
+  }
+
+  .home-left {
+    order: 1; /* teks tetap visual di kiri */
+  }
+}
+
+/* Mobile: urutan DOM sudah benar (gambar → teks), tidak perlu order */
+@media (max-width: 640px) {
+  .home-hero {
+    flex-direction: column;
+  }
+}
 </style>
 
 <section id="home">
@@ -239,42 +431,7 @@ document.getElementById('home-mount').innerHTML = `
   <!-- Hero Area -->
   <div class="home-hero">
 
-    <!-- Kiri: Teks -->
-    <div class="home-left">
-      <h1>
-        Kirim Barang Besar<br>
-        <span>Lebih Hemat &amp; Aman</span>
-      </h1>
-
-      <p class="desc">
-        J&amp;T Cargo Wonokromo siap bantu pengiriman berat
-        dan volume besar ke seluruh Indonesia dengan layanan
-        cepat, aman, dan full tracking berbasis sistem modern.
-      </p>
-
-      <div class="home-buttons">
-        <a href="https://wa.me/6281233538858" target="_blank" class="btn-kirim">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M20.52 3.48A11.93 11.93 0 0012.05 0C5.42 0 .05 5.37.05 12a11.93 11.93 0 001.64 6.07L0 24l6.12-1.61A11.97 11.97 0 0012.05 24c6.63 0 12-5.37 12-12a11.93 11.93 0 00-3.53-8.52zM12.05 22c-1.77 0-3.5-.47-5.01-1.36l-.36-.21-3.63.95.97-3.54-.24-.38A9.94 9.94 0 012.05 12c0-5.52 4.49-10 10-10 2.67 0 5.17 1.04 7.06 2.93A9.93 9.93 0 0122.05 12c0 5.52-4.49 10-10 10zm5.45-7.48c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15s-.78.97-.95 1.17c-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.89-.79-1.5-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.59-.5-.51-.68-.52h-.58c-.2 0-.52.07-.79.37s-1.04 1.01-1.04 2.47 1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.11.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/>
-          </svg>
-          Kirim Sekarang
-        </a>
-
-        <a href="#layanan" class="btn-ongkir">
-          Cek Ongkir
-        </a>
-      </div>
-
-     <p class="home-trust">
-      <svg width="20" height="26" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-right:14px; flex-shrink:0;">
-        <path d="M16 1C16.2577 1 16.5202 1.03453 16.7891 1.10742L17.0605 1.19336L29.0449 5.73828C29.6255 5.97064 30.0928 6.33666 30.4629 6.85156V6.85254C30.8219 7.354 31 7.90829 31 8.5459V18.1035C31 22.8549 29.6459 27.1823 26.9277 31.1113C24.2088 35.0426 20.7847 37.636 16.6484 38.9453L16.6113 38.957L16.5752 38.9717C16.6196 38.9538 16.6065 38.9672 16.4814 38.9805C16.3703 38.9923 16.2125 39 16 39H15.5C15.4932 39 15.4884 38.9993 15.4854 38.999L15.4287 38.9697L15.3516 38.9453C11.2153 37.636 7.79115 35.0426 5.07227 31.1113C2.35406 27.1823 1 22.8549 1 18.1035V8.5459C1.00005 7.90895 1.17816 7.35493 1.53809 6.85352L1.53906 6.85254C1.90767 6.33763 2.37352 5.97082 2.9541 5.73828L2.95508 5.73926L14.9395 1.19336C15.3041 1.06164 15.6563 1 16 1Z" stroke="#008037" stroke-width="2"/>
-        <path d="M12.5256 23.1491L21.5211 14.2045C21.8007 13.9266 22.1564 13.7876 22.5884 13.7876C23.0204 13.7876 23.3761 13.9266 23.6557 14.2045C23.9352 14.4824 24.075 14.8362 24.075 15.2657C24.075 15.6953 23.9352 16.049 23.6557 16.327L13.5929 26.3328C13.288 26.636 12.9322 26.7876 12.5256 26.7876C12.119 26.7876 11.7633 26.636 11.4584 26.3328L7.49423 22.3911C7.21471 22.1132 7.07495 21.7594 7.07495 21.3299C7.07495 20.9003 7.21471 20.5466 7.49423 20.2686C7.77375 19.9907 8.12951 19.8517 8.5615 19.8517C8.99349 19.8517 9.34924 19.9907 9.62876 20.2686L12.5256 23.1491Z" fill="#008037"/>
-      </svg>
-      Aman &nbsp;·&nbsp; Cepat &nbsp;·&nbsp; Terjangkau &nbsp;·&nbsp; Full Tracking
-    </p>
-    </div>
-
-    <!-- Kanan: Gambar -->
+<!-- Kanan: Gambar -->
     <div class="home-right">
       <img
         src="assets/home.png"
@@ -282,6 +439,10 @@ document.getElementById('home-mount').innerHTML = `
       />
     </div>
 
+
+    
+
+   
     <!-- Kurva S dari Figma — dipasang di .home-hero bukan .home-right -->
     <svg
       class="home-curve"
@@ -300,6 +461,42 @@ document.getElementById('home-mount').innerHTML = `
     fill="#066A36" fill-opacity="0.5"
   />
     </svg>
+
+    <!-- Kiri: Teks -->
+    <div class="home-left">
+      <h1>
+        Kirim Barang Besar<br>
+        <span>Lebih Hemat &amp; Aman</span>
+      </h1>
+
+      <p class="desc">
+        J&amp;T Cargo Wonokromo siap bantu pengiriman berat
+        dan volume besar ke seluruh Indonesia dengan layanan
+        cepat, aman, dan full tracking berbasis sistem modern.
+      </p>
+
+      <div class="home-buttons">
+        <a href="https://wa.me/6281233538858" target="_blank" class="btn-kirim">
+  <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20.52 3.48A11.93 11.93 0 0012.05 0C5.42 0 .05 5.37.05 12a11.93 11.93 0 001.64 6.07L0 24l6.12-1.61A11.97 11.97 0 0012.05 24c6.63 0 12-5.37 12-12a11.93 11.93 0 00-3.53-8.52zM12.05 22c-1.77 0-3.5-.47-5.01-1.36l-.36-.21-3.63.95.97-3.54-.24-.38A9.94 9.94 0 012.05 12c0-5.52 4.49-10 10-10 2.67 0 5.17 1.04 7.06 2.93A9.93 9.93 0 0122.05 12c0 5.52-4.49 10-10 10zm5.45-7.48c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15s-.78.97-.95 1.17c-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.89-.79-1.5-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.59-.5-.51-.68-.52h-.58c-.2 0-.52.07-.79.37s-1.04 1.01-1.04 2.47 1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.11.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/>
+  </svg>
+  Kirim Sekarang
+</a>
+
+        <a href="#layanan" class="btn-ongkir">
+          Cek Ongkir
+        </a>
+      </div>
+        <p class="home-trust">
+      <svg width="20" height="26" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-right:14px; flex-shrink:0;">
+        <path d="M16 1C16.2577 1 16.5202 1.03453 16.7891 1.10742L17.0605 1.19336L29.0449 5.73828C29.6255 5.97064 30.0928 6.33666 30.4629 6.85156V6.85254C30.8219 7.354 31 7.90829 31 8.5459V18.1035C31 22.8549 29.6459 27.1823 26.9277 31.1113C24.2088 35.0426 20.7847 37.636 16.6484 38.9453L16.6113 38.957L16.5752 38.9717C16.6196 38.9538 16.6065 38.9672 16.4814 38.9805C16.3703 38.9923 16.2125 39 16 39H15.5C15.4932 39 15.4884 38.9993 15.4854 38.999L15.4287 38.9697L15.3516 38.9453C11.2153 37.636 7.79115 35.0426 5.07227 31.1113C2.35406 27.1823 1 22.8549 1 18.1035V8.5459C1.00005 7.90895 1.17816 7.35493 1.53809 6.85352L1.53906 6.85254C1.90767 6.33763 2.37352 5.97082 2.9541 5.73828L2.95508 5.73926L14.9395 1.19336C15.3041 1.06164 15.6563 1 16 1Z" stroke="#008037" stroke-width="2"/>
+        <path d="M12.5256 23.1491L21.5211 14.2045C21.8007 13.9266 22.1564 13.7876 22.5884 13.7876C23.0204 13.7876 23.3761 13.9266 23.6557 14.2045C23.9352 14.4824 24.075 14.8362 24.075 15.2657C24.075 15.6953 23.9352 16.049 23.6557 16.327L13.5929 26.3328C13.288 26.636 12.9322 26.7876 12.5256 26.7876C12.119 26.7876 11.7633 26.636 11.4584 26.3328L7.49423 22.3911C7.21471 22.1132 7.07495 21.7594 7.07495 21.3299C7.07495 20.9003 7.21471 20.5466 7.49423 20.2686C7.77375 19.9907 8.12951 19.8517 8.5615 19.8517C8.99349 19.8517 9.34924 19.9907 9.62876 20.2686L12.5256 23.1491Z" fill="#008037"/>
+      </svg>
+      Aman &nbsp;·&nbsp; Cepat &nbsp;·&nbsp; Terjangkau &nbsp;·&nbsp; Full Tracking
+    </p>
+    </div>
+
+    
 
   </div>
 
