@@ -1,3 +1,199 @@
+const ctaResponsive = document.createElement('style');
+
+ctaResponsive.textContent = `
+
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 1023px){
+
+  #cta{
+    height:auto !important;
+    overflow:hidden !important;
+  }
+
+  #cta > div{
+    flex-direction:column !important;
+    align-items:stretch !important;
+    height:auto !important;
+  }
+
+  /* IMAGE */
+  #cta img{
+    width:100% !important;
+    height:220px !important;
+    object-fit:cover !important;
+    object-position:center top !important;
+  }
+
+  /* CONTENT WRAPPER */
+  #cta .flex.items-center.flex-1{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    justify-content:center !important;
+    max-width:100% !important;
+    width:100% !important;
+    height:auto !important;
+    padding:32px 24px !important;
+    gap:18px !important;
+    box-sizing:border-box !important;
+  }
+
+  /* TITLE */
+  #cta h2{
+    font-size:32px !important;
+    line-height:1.3 !important;
+    white-space:normal !important;
+  }
+
+  /* DIVIDER */
+  #cta .flex.items-center.flex-1 > div:nth-child(2){
+    display:none !important;
+  }
+
+  /* SUBTEXT */
+  #cta p{
+    font-size:14px !important;
+    line-height:1.7 !important;
+  }
+
+  #cta p br{
+    display:none !important;
+  }
+
+  /* BUTTON WRAPPER */
+  #cta .flex-shrink-0:last-child{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    width:100% !important;
+  }
+
+  /* BUTTON */
+  #cta a{
+    width:100% !important;
+    justify-content:center !important;
+    padding:14px 18px !important;
+    font-size:14px !important;
+    box-sizing:border-box !important;
+  }
+}
+
+
+@media (max-width: 767px){
+
+  #cta{
+    height:auto !important;
+    border-radius:0 !important;
+    overflow:hidden !important;
+  }
+
+  /* WRAPPER */
+  #cta > div{
+    flex-direction:column !important;
+    align-items:center !important;
+    height:auto !important;
+  }
+
+  #cta img{
+  width:110px !important;
+  height:110px !important;
+
+  object-fit:cover !important;
+  object-position:center top !important;
+
+  border-radius:50% !important;
+
+  margin-top:24px !important;
+  margin-bottom:8px !important;
+
+  border:4px solid rgba(255,255,255,0.18) !important;
+
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.28) !important;
+
+  display:block !important;
+}
+  /* CONTENT */
+  #cta .flex.items-center.flex-1{
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    text-align:center !important;
+
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+
+    padding:28px 22px 30px !important;
+    gap:18px !important;
+
+    box-sizing:border-box !important;
+  }
+
+  /* TITLE */
+  #cta h2{
+    font-size:24px !important;
+    line-height:1.35 !important;
+    white-space:normal !important;
+    letter-spacing:-0.3px !important;
+    margin:0 !important;
+  }
+
+  /* DIVIDER */
+  #cta .flex.items-center.flex-1 > div:nth-child(2){
+    display:none !important;
+  }
+
+  /* SUBTEXT */
+  #cta p{
+    font-size:13px !important;
+    line-height:1.7 !important;
+    opacity:.88 !important;
+    max-width:320px !important;
+    margin:0 auto !important;
+  }
+
+  #cta p br{
+    display:none !important;
+  }
+
+  /* BUTTON WRAPPER */
+  #cta .flex-shrink-0:last-child{
+    width:100% !important;
+    margin-left:0 !important;
+    padding-left:0 !important;
+  }
+
+  /* BUTTON */
+  #cta a{
+    width:100% !important;
+    justify-content:center !important;
+    align-items:center !important;
+
+    padding:14px 18px !important;
+
+    border-radius:14px !important;
+
+    font-size:14px !important;
+    font-weight:600 !important;
+
+    box-sizing:border-box !important;
+
+    box-shadow:
+      0 10px 25px rgba(0,0,0,.18) !important;
+  }
+
+  /* ICON */
+  #cta a svg{
+    width:20px !important;
+    height:20px !important;
+    flex-shrink:0 !important;
+  }
+}
+
+`;
+
+document.head.appendChild(ctaResponsive);
 document.getElementById('cta-mount').innerHTML = `
 <section
   id="cta"
