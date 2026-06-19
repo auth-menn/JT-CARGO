@@ -9,6 +9,14 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://jntcargowonokromo.web.id/" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#008037" />
+
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jntcargowonokromo.web.id/" />
@@ -113,9 +121,221 @@
 
   <!-- Global styles -->
   <link rel="stylesheet" href="css/global.css" />
+
+  <!-- Preloader Styles -->
+  <style>
+    html.preload-active, html.preload-active body {
+      overflow: hidden !important;
+      height: 100%;
+    }
+
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #preloader.preloader-hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .preloader-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+
+    /* Logo turun dari atas, lalu mengendap di tengah */
+    .preloader-logo {
+      opacity: 0;
+      transform: translateY(-120px) scale(0.92);
+      animation: logoDrop 0.9s cubic-bezier(.22, 1, .36, 1) forwards;
+      animation-delay: 0.15s;
+    }
+
+    .preloader-logo svg {
+      display: block;
+      width: clamp(150px, 34vw, 220px);
+      height: auto;
+    }
+
+    @keyframes logoDrop {
+      0% {
+        opacity: 0;
+        transform: translateY(-120px) scale(0.92);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(6px) scale(1.01);
+      }
+      80% {
+        transform: translateY(-2px) scale(1);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Subjudul: huruf muncul satu per satu setelah logo mengendap */
+    .preloader-sub {
+      display: flex;
+      font-family: 'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
+      font-size: clamp(0.7rem, 1.6vw, 0.85rem);
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    .preloader-sub .letter {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: subLetterIn 0.45s ease forwards;
+    }
+
+    .preloader-sub .letter.space {
+      width: 0.32em;
+    }
+
+    @keyframes subLetterIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .preloader-bar {
+      width: 150px;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(0, 128, 55, 0.15);
+      overflow: hidden;
+      opacity: 0;
+      animation: preloaderFadeIn 0.6s ease forwards;
+      animation-delay: 1.45s;
+    }
+
+    .preloader-bar::after {
+      content: '';
+      display: block;
+      width: 36%;
+      height: 100%;
+      background: #008037;
+      border-radius: 999px;
+      animation: preloaderBarMove 1.2s ease-in-out infinite;
+    }
+
+    @keyframes preloaderFadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes preloaderBarMove {
+      0%   { transform: translateX(-110%); }
+      50%  { transform: translateX(140%); }
+      100% { transform: translateX(320%); }
+    }
+
+    @media (max-width: 480px) {
+      .preloader-sub { letter-spacing: 0.24em; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .preloader-logo,
+      .preloader-sub .letter,
+      .preloader-bar,
+      .preloader-bar::after {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+  <script>document.documentElement.classList.add('preload-active');</script>
 </head>
 
 <body class="font-sans text-gray-800 bg-white antialiased">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  PRELOADER                                  -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo" aria-label="J&amp;T Cargo">
+        <svg width="244" height="56" viewBox="0 0 244 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M56 0H40.1572L29.8153 44.9531H5.721L0 56H43.3477L56 0Z" fill="#008037"/>
+          <path d="M146.088 10.8949L148.158 8.607H164.393L167.225 5.77431H151.318L153.388 3.48636H169.513L173 0H107.954L100 15.035H124.515L114.382 56H129.636L139.987 15.035H157.964L162.104 10.8949H146.088Z" fill="#008037"/>
+          <path d="M100.128 44.1245C100.128 44.1245 105.986 35.9533 105.986 28.6537C95.2465 25.3852 94.9211 25.1673 94.9211 25.1673C94.9211 25.1673 95.2465 30.179 92.7515 34.428C91.8836 34.3191 90.9073 33.2296 89.8225 32.358C88.7377 31.4864 79.6253 22.5525 78.5404 20.7004C77.4556 18.8483 76.6962 17.1051 76.6962 14.8171C76.6962 12.6381 79.2998 7.19067 85.2663 7.19067C87.6529 7.19067 93.4024 8.60699 91.3412 14.9261C96.3314 6.2101 99.6943 0 99.6943 0H64.2209L63.1361 3.92219C63.1361 3.92219 59.9902 14.2724 68.2347 22.6615C68.2347 22.6615 55 31.0506 55 41.1829C55 51.3152 64.9803 56 76.5878 56C80.1677 56 88.1953 54.8016 92.3176 52.4047L95.355 55.7821H110L100.128 44.1245ZM77.1302 46.7393C72.6825 46.7393 68.0177 43.7977 68.0177 40.2023C68.0177 37.8054 70.2958 34.428 75.3945 31.5953L85.9172 44.0156C85.8087 44.0156 81.5779 46.7393 77.1302 46.7393Z" fill="#008037"/>
+          <path d="M178.361 34H172.133L162 56H166.856L169.283 50.3618H175.3L175.933 56H181L178.361 34ZM170.656 46.603L172.661 41.9598C173.189 40.6332 173.822 38.9749 174.35 37.7588H174.456C174.561 39.0854 174.667 40.7437 174.772 41.9598L175.3 46.603H170.656Z" fill="#008037"/>
+          <path d="M194.241 34C191.654 34 189.39 34.22 187.773 34.44L184 56H188.743L190.252 47.42H191.654C193.594 47.42 194.349 48.19 194.457 50.94C194.565 53.58 194.78 55.34 195.104 56H200.062C199.847 55.12 199.631 52.26 199.416 49.84C199.2 47.86 198.661 46.32 197.26 45.77V45.66C199.2 45 201.464 43.02 201.895 40.27C202.218 38.29 201.787 36.75 200.709 35.65C199.416 34.44 197.367 34 194.241 34ZM197.044 40.71C196.721 42.58 195.103 43.9 192.732 43.9H190.791L191.869 37.85C192.193 37.74 192.947 37.74 194.025 37.74C196.289 37.63 197.475 38.62 197.044 40.71Z" fill="#008037"/>
+          <path d="M235.97 34C229.99 34 225.292 38.8293 224.224 45.161C223.156 51.278 225.933 56 231.912 56C237.785 56 242.59 51.7073 243.765 44.7317C244.833 38.8293 242.27 34 235.97 34ZM238.96 44.9464C238.212 49.1317 235.97 52.2439 232.873 52.2439C229.777 52.2439 228.495 49.3463 229.136 45.161C229.884 40.9756 232.126 37.8634 235.222 37.8634C238.426 37.7561 239.6 41.0829 238.96 44.9464Z" fill="#008037"/>
+          <path d="M160.51 38.0297C161.524 38.0297 162.424 38.1386 163.099 38.3564L164 34.3268C163.212 34.1089 162.086 34 160.961 34C154.432 34 148.578 38.0297 147.228 45.3267C146.102 51.4257 149.141 56 156.571 56C157.809 56 158.934 55.8911 159.835 55.6732L160.623 51.9703L160.736 51.6436C159.948 51.8614 158.934 51.9703 158.147 51.9703C154.432 51.9703 152.406 50.0099 152.406 46.6337C152.406 46.0891 152.406 45.5446 152.518 45C153.194 40.3168 156.683 38.0297 160.51 38.0297Z" fill="#008037"/>
+          <path d="M223 35C223 35 222.636 34.5 222 34C222.545 34.5 223 35 223 35Z" fill="#008037"/>
+          <path d="M210.794 35.8745C207.337 37.7339 204.852 41.1246 204.204 45.0622C204.204 45.0622 204.204 45.0622 204.204 45.1716C203.664 48.3436 204.204 51.1874 205.717 53.0468C207.229 55.0156 209.605 56 213.062 56C215.655 56 218.247 55.3438 219.759 54.7969L221.596 43.3122H214.79L214.142 47.1404H216.951L216.195 51.7343C215.871 51.953 214.574 52.0624 213.602 52.0624C210.902 52.0624 208.957 50.5311 208.633 47.7967C208.633 47.5779 208.633 47.4685 208.633 47.2498C208.633 42.3278 211.334 40.1402 211.334 40.1402C211.55 39.9215 211.658 39.8121 211.874 39.5933C211.874 39.5933 213.386 37.9527 217.167 37.8433C218.247 37.8433 219.435 37.8433 220.84 38.0621C221.272 38.1714 221.812 38.2808 222.244 38.3902L223 34.562C223 34.562 222.568 34.4526 221.812 34.3432C219.759 33.9057 215.114 33.4682 210.794 35.8745Z" fill="#008037"/>
+        </svg>
+      </div>
+      <div class="preloader-sub" id="preloader-sub"></div>
+      <div class="preloader-bar"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      // Huruf subjudul muncul satu per satu, dimulai setelah logo selesai turun.
+      var sub = document.getElementById('preloader-sub');
+      if (sub) {
+        var text = 'WONOKROMO \u00B7 SURABAYA';
+        var startDelay = 0.95; // detik — dimulai setelah logo mengendap
+        var step = 0.045;      // jarak antar huruf (detik)
+        var delay = startDelay;
+        text.split('').forEach(function (ch) {
+          var span = document.createElement('span');
+          span.className = 'letter' + (ch === ' ' ? ' space' : '');
+          span.textContent = ch === ' ' ? '\u00A0' : ch;
+          span.style.animationDelay = delay.toFixed(2) + 's';
+          sub.appendChild(span);
+          delay += step;
+        });
+      }
+
+      function hidePreloader() {
+        var el = document.getElementById('preloader');
+        if (!el) return;
+        document.documentElement.classList.remove('preload-active');
+        el.classList.add('preloader-hide');
+        setTimeout(function () {
+          if (el && el.parentNode) el.parentNode.removeChild(el);
+        }, 600);
+      }
+
+      var minTimeReached = false;
+      var pageReady = false;
+
+      function tryHide() {
+        if (minTimeReached && pageReady) hidePreloader();
+      }
+
+      // Durasi minimum disesuaikan agar seluruh urutan animasi
+      // (logo turun ~1.05s + huruf muncul ~1.85s) selesai sebelum fade-out.
+      setTimeout(function () { minTimeReached = true; tryHide(); }, 2200);
+
+      window.addEventListener('load', function () {
+        pageReady = true;
+        tryHide();
+      });
+
+      // Fallback: jangan biarkan preloader tampil selamanya
+      setTimeout(hidePreloader, 6000);
+    })();
+  </script>
 
   <!-- ═══════════════════════════════════════════ -->
   <!--  HEADER / NAV                               -->
