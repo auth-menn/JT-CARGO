@@ -56,28 +56,28 @@ document.getElementById('footer-mount').innerHTML = `
         padding-left:220px;
         flex:1;
       ">
-        ${[
-          'Beranda',
-          'Tentang Kami',
-          'Keunggulan',
-          'Layanan',
-          'Cara Kirim',
-          'Kontak'
-        ].map(item => `
-          <a href="#"
-             style="
-              color:#ffffff;
-              text-decoration:none;
-              font-size:14px;
-              font-weight:400;
-              transition:.2s;
-             "
-             onmouseover="this.style.opacity='0.7'"
-             onmouseout="this.style.opacity='1'"
-          >
-            ${item}
-          </a>
-        `).join('')}
+       ${[
+        { label: 'Beranda',      href: '#home' },
+        { label: 'Tentang Kami', href: '#tentang' },
+        { label: 'Keunggulan',   href: '#keunggulan' },
+        { label: 'Layanan',      href: '#layanan' },
+        { label: 'Cara Kirim',   href: '#carakirim' },
+        { label: 'Kontak',       href: '#kontak' }
+      ].map(item => `
+        <a href="${item.href}"
+          style="
+            color:#ffffff;
+            text-decoration:none;
+            font-size:14px;
+            font-weight:400;
+            transition:.2s;
+          "
+          onmouseover="this.style.opacity='0.7'"
+          onmouseout="this.style.opacity='1'"
+        >
+          ${item.label}
+        </a>
+      `).join('')}
       </nav>
     </div>
 
@@ -201,56 +201,11 @@ document.getElementById('footer-mount').innerHTML = `
         color:#d5e9dd;
         font-size:15px;
       ">
-        Email &nbsp; : jntwonokromo@jnt.com
+        Email &nbsp; : jntcargowonokromo@gmail.com
       </p>
     </div>
   </div>
 
-  <!-- RIGHT -->
-  <div style="
-    padding-left:70px;
-  ">
-    <h4 style="
-      margin:0 0 18px;
-      font-size:18px;
-      font-weight:500;
-      color:#ffffff;
-    ">
-      Tag
-    </h4>
-
-    <div style="
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-    ">
-
-      ${[''].map(tag => `
-        <a href="#"
-           style="
-            height:46px;
-            border:1px solid rgba(255,255,255,0.45);
-            border-radius:10px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            color:#ffffff;
-            text-decoration:none;
-            font-size:14px;
-            transition:.2s;
-           "
-           onmouseover="
-            this.style.background='rgba(255,255,255,0.08)'
-           "
-           onmouseout="
-            this.style.background='transparent'
-           "
-        >
-          ${tag}
-        </a>
-      `).join('')}
-
-    </div>
   </div>
 
 </div>
@@ -262,36 +217,35 @@ document.getElementById('footer-mount').innerHTML = `
     border-top:1px solid rgba(255,255,255,0.08);
   ">
     <div style="
-      max-width:1380px;
-      margin:0 auto;
-      padding:18px 55px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:20px;
-    ">
+  max-width:1380px;
+  margin:0 auto;
+  padding:18px 55px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:20px;
+">
 
-      <p style="
-        margin:0;
-        font-size:14px;
-        color:#d5e9dd;
-      ">
-        2026 JNT Cargo Wonokromo      </p>
+  <span></span> <!-- spacer kiri -->
 
-      <div style="
-        display:flex;
-        align-items:center;
-        gap:14px;
-      ">
+  <p style="
+    margin:0;
+    font-size:14px;
+    color:#d5e9dd;
+    text-align:center;
+  ">
+    Copyright © 2026 CV BERKAT USAHA TRANSPORTINDO, ALL Rights Reserved.
+  </p>
 
-        <span style="
-          color:#d5e9dd;
-          font-size:14px;
-        ">
-          Connect with us
-        </span>
-
+  <div style="
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:14px;
+  ">
+    <span style="color:#d5e9dd; font-size:14px;">
+      Connect with us
+    </span>
    <!-- Social -->
     ${[
       {
@@ -309,15 +263,6 @@ document.getElementById('footer-mount').innerHTML = `
 
         `,
         link:'https://www.instagram.com/jntcargo.sbywonokromo/'
-      },
-      {
-        svg: `
-          <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2.8908 10.8239C2.81555 10.8239 1.23702 10.8244 0.508978 10.8237C0.134175 10.8234 0.000453739 10.6887 0.000453739 10.3115C-2.55482e-05 9.34266 -0.000265192 8.37378 0.000453739 7.4049C0.000693383 7.0325 0.142083 6.89039 0.512093 6.89015C1.24013 6.88967 2.81004 6.88991 2.8908 6.88991C2.8908 6.82353 2.89056 5.42473 2.8908 4.78056C2.89128 3.82822 3.06118 2.91661 3.54503 2.08193C4.04037 1.2276 4.76122 0.642393 5.68504 0.304016C6.27673 0.0871385 6.89093 0.000627159 7.5188 0.000147872C8.30435 -0.000331416 9.0899 0.000387508 9.8757 0.00182537C10.2134 0.00230466 10.3631 0.151603 10.3639 0.491657C10.3653 1.40302 10.3653 2.31439 10.3639 3.22551C10.3634 3.56916 10.2198 3.7072 9.8745 3.71103C9.23058 3.71798 8.58617 3.71367 7.94297 3.73955C7.29329 3.73955 6.95156 4.05684 6.95156 4.72928C6.93599 5.44054 6.94509 6.15252 6.94509 6.88967C7.00596 6.88967 8.85481 6.88943 9.71897 6.88967C10.1115 6.88967 10.2457 7.02459 10.2457 7.41928C10.2457 8.38289 10.2455 9.34674 10.2447 10.3103C10.2445 10.6993 10.1185 10.8234 9.72352 10.8237C8.85937 10.8241 7.0177 10.8239 6.93718 10.8239V18.6231C6.93718 19.0389 6.80634 19.1714 6.39607 19.1714C5.39579 19.1714 4.39528 19.1717 3.39501 19.1714C3.03243 19.1714 2.89104 19.0305 2.89104 18.6679C2.8908 16.1279 2.8908 10.913 2.8908 10.8239Z" fill="black"/>
-          </svg>
-
-        `,
-        link:'https://www.facebook.com/groups/1254302621755500/user/61590622108721/'
       }
     ].map(item => `
       <a href="${item.link}"
