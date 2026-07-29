@@ -239,7 +239,7 @@ document.getElementById('footer-mount').innerHTML = `
      onmouseover="this.style.opacity='1'"
      onmouseout="this.style.opacity='0.8'"
   >
-    Dibuat oleh auth-men.my.id
+    Dibuat oleh auth-men
   </a>
 
   <p style="
