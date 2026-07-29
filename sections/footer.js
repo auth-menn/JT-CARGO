@@ -226,7 +226,21 @@ document.getElementById('footer-mount').innerHTML = `
   gap:20px;
 ">
 
-  <span></span> <!-- spacer kiri -->
+  <a href="https://auth-men.my.id/"
+     target="_blank"
+     style="
+       margin:0;
+       font-size:13px;
+       color:#d5e9dd;
+       text-decoration:none;
+       opacity:0.8;
+       transition:.2s;
+     "
+     onmouseover="this.style.opacity='1'"
+     onmouseout="this.style.opacity='0.8'"
+  >
+    Dibuat oleh auth-men.my.id
+  </a>
 
   <p style="
     margin:0;
